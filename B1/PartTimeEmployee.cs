@@ -24,5 +24,10 @@ namespace B1
         {
             return this.getName();
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $", Salary: {calculateSalary()}";
+        }
     }
 }

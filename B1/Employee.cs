@@ -9,14 +9,14 @@ namespace B1
     internal abstract class Employee : IEmployee
     {
         private string name;
-        private int paymetPerHour;
+        private int paymentPerHour;
         public abstract int calculateSalary();
         public abstract string getName();
 
         public Employee(string name, int paymentPerHour) 
         {
             this.name = name;
-            paymetPerHour = paymentPerHour;
+            paymentPerHour = paymentPerHour;
         }
 
         public void setName(string name) 
@@ -31,12 +31,17 @@ namespace B1
 
         public void setPaymentPerHour(int paymentPerHour) 
         {
-            this.paymetPerHour = paymentPerHour;
+            this.paymentPerHour = paymentPerHour;
         }
 
         public int getPaymetPerHour() 
         {
-            return this.paymetPerHour;
+            return this.paymentPerHour;
+        }
+
+        public string toString()
+        {
+            return $"Name: {this.name}, Payment Per Hour: {this.paymentPerHour}";
         }
     }
 }
