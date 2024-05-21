@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace B1
 {
-    internal class FullTimeEmployee : Employee
+    public class FullTimeEmployee : Employee
     {
-        public FullTimeEmployee(string name, int paymentPerHour) : base(name, paymentPerHour)
+        public FullTimeEmployee(string name, int paymentPerHour)
+            : base(name, paymentPerHour)
         {
         }
 
-        public override int calculateSalary()
+        public override int CalculateSalary()
         {
-            return 8 * this.getPaymetPerHour();
-        }
-
-        public override string getName()
-        {
-            return this.getName();
+            return 8 * paymentPerHour;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $", Salary: {calculateSalary()}";
+            return base.ToString() + ", Type: Full-Time";
         }
     }
+
 }

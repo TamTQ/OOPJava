@@ -6,42 +6,43 @@ using System.Threading.Tasks;
 
 namespace B1
 {
-    internal abstract class Employee : IEmployee
+    public abstract class Employee : IEmployee
     {
-        private string name;
-        private int paymentPerHour;
-        public abstract int calculateSalary();
-        public abstract string getName();
+        protected string name;
+        protected int paymentPerHour;
 
-        public Employee(string name, int paymentPerHour) 
+        public Employee(string name, int paymentPerHour)
         {
             this.name = name;
-            paymentPerHour = paymentPerHour;
+            this.paymentPerHour = paymentPerHour;
         }
 
-        public void setName(string name) 
+        public string GetName()
+        {
+            return name;
+        }
+
+        public void SetName(string name)
         {
             this.name = name;
         }
 
-        public String getName(string name)
+        public int GetPaymentPerHour()
         {
-            return this.name;
+            return paymentPerHour;
         }
 
-        public void setPaymentPerHour(int paymentPerHour) 
+        public void SetPaymentPerHour(int paymentPerHour)
         {
             this.paymentPerHour = paymentPerHour;
         }
 
-        public int getPaymetPerHour() 
-        {
-            return this.paymentPerHour;
-        }
+        public abstract int CalculateSalary();
 
-        public string toString()
+        public override string ToString()
         {
-            return $"Name: {this.name}, Payment Per Hour: {this.paymentPerHour}";
+            return $"Name: {name}, Payment Per Hour: {paymentPerHour}";
         }
     }
+
 }

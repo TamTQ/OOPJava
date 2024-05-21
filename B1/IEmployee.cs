@@ -8,7 +8,7 @@ namespace B1
 {
     internal interface IEmployee
     {
-        public int calculateSalary();
-        public string getName();
+        public int CalculateSalary();
+        public string GetName();
     }
 }

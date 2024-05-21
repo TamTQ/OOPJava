@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace B1
 {
-    internal class PartTimeEmployee : Employee
+    public class PartTimeEmployee : Employee
     {
-        private int workingHour;
+        private int workingHours;
 
-        public PartTimeEmployee(string name, int paymentPerHour, int workingHour) : base(name, paymentPerHour)
+        public PartTimeEmployee(string name, int paymentPerHour, int workingHours)
+            : base(name, paymentPerHour)
         {
-            this.workingHour = workingHour;
+            this.workingHours = workingHours;
         }
 
-        public override int calculateSalary()
+        public override int CalculateSalary()
         {
-            return this.workingHour*this.getPaymetPerHour();
-        }
-
-        public override string getName()
-        {
-            return this.getName();
+            return workingHours * paymentPerHour;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $", Salary: {calculateSalary()}";
+            return base.ToString() + $", Type: Part-Time, Working Hours: {workingHours}";
         }
     }
+
 }
